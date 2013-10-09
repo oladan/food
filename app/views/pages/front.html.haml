@@ -1,0 +1,18 @@
+%h1 Front
+
+%u1
+
+  %li= link_to t("signup"), :signup
+  %li= link_to t("login"), :login
+
+%h2 Users
+%table
+  %tr
+    %th Name
+    %th Email
+    %th Role
+  - User.all.each do |u|
+    %tr
+      %td= u.name
+      %td= u.email
+      %td= u.role.capitalize

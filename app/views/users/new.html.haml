@@ -1,0 +1,24 @@
+%h1= t("signup")
+
+= form_for @user do |f|
+  
+  .errors
+    = @user.errors.full_messages
+
+  %div
+    = f.label :email
+    = f.text_field :email
+  %div
+    = f.label :password
+    = f.password_field :password
+  %div
+    = f.label :password_confirmation
+  = f.password_field :password_confirmation
+  %div
+    = f.label :name
+    = f.text_field :name
+  %div
+    = f.label :role
+    = f.select :role, options_for_select([ ["Customer", "customer"], ["Cook", "cook"]])
+  %div
+    = f.submit "Sign up"
